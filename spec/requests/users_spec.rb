@@ -9,6 +9,10 @@ describe "Users" do
       it "should not make a new user" do
         lambda do
           visit signup_path
+          fill_in "Name",         :with => ""
+          fill_in "Email",        :with => ""
+          fill_in "Password",     :with => ""
+          fill_in "Confirmation", :with => ""
           # a tutoriál itt mindent kitölt üresre. minek? FIXME
           click_button
           response.should render_template('users/new')

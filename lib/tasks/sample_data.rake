@@ -1,6 +1,6 @@
+###require 'faker' # http://stackoverflow.com/questions/5013826/heroku-rake-dbmigrate-no-such-file-to-load-faker/5014241#5014241
 
 namespace :db do
-  require 'faker'
   desc "Fill database with sample data"
   task :populate => :environment do
     Rake::Task['db:reset'].invoke
